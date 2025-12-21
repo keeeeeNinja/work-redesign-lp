@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <style>
+      .title{font:700 28px system-ui, -apple-system, "Segoe UI", sans-serif; fill:#111}
+      .sub{font:500 16px system-ui, -apple-system, "Segoe UI", sans-serif; fill:#333}
+      .h{font:700 16px system-ui, -apple-system, "Segoe UI", sans-serif; fill:#111}
+      .t{font:500 14px system-ui, -apple-system, "Segoe UI", sans-serif; fill:#222}
+      .muted{fill:#666}
+      .box{fill:#fff; stroke:#111; stroke-width:2; rx:16}
+      .box2{fill:#fff; stroke:#111; stroke-width:2; rx:12}
+      .chip{fill:#f6f6f6; stroke:#111; stroke-width:1.5; rx:10}
+      .arrow{stroke:#111; stroke-width:2.5; fill:none; marker-end:url(#m)}
+    </style>
+    <marker id="m" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="675" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="60" y="70" class="title">仕事のやり方「再設計フロー」</text>
+  <text x="60" y="100" class="sub">成果が出る配分に戻すための、最小で回る設計図</text>
+
+  <!-- Step boxes layout -->
+  <!-- Column 1 -->
+  <rect x="60" y="140" width="520" height="90" class="box"/>
+  <text x="90" y="175" class="h">[0] ゴールを決める（成果の定義）</text>
+  <text x="90" y="202" class="t">数字 / 意思決定 / 評価指標 / 期限 を言語化する</text>
+
+  <rect x="60" y="260" width="520" height="90" class="box"/>
+  <text x="90" y="295" class="h">[1] 現状を見える化（棚卸し）</text>
+  <text x="90" y="322" class="t">1週間の仕事を全部書く（会議/連絡/作業/調整/思考）</text>
+
+  <rect x="60" y="380" width="520" height="150" class="box"/>
+  <text x="90" y="415" class="h">[2] 4分類で詰まりを特定</text>
+
+  <rect x="90" y="435" width="235" height="34" class="chip"/>
+  <text x="105" y="457" class="t">A 成果直結（数字/意思決定）</text>
+
+  <rect x="345" y="435" width="205" height="34" class="chip"/>
+  <text x="360" y="457" class="t">B 重要補助（Aを支える）</text>
+
+  <rect x="90" y="477" width="235" height="34" class="chip"/>
+  <text x="105" y="499" class="t">C 維持運用（回すために必要）</text>
+
+  <rect x="345" y="477" width="205" height="34" class="chip"/>
+  <text x="360" y="499" class="t">D 低価値（目的が曖昧/惰性）</text>
+
+  <!-- Column 2 -->
+  <rect x="640" y="140" width="500" height="90" class="box"/>
+  <text x="670" y="175" class="h">[3] 20%（A+B）を特定</text>
+  <text x="670" y="202" class="t">質問：「止まると誰が困る？」「何が進まない？」</text>
+
+  <rect x="640" y="260" width="500" height="110" class="box"/>
+  <text x="670" y="295" class="h">[4] Dを処理（捨てる/任せる/自動化）</text>
+  <text x="670" y="322" class="t">頻度×重要度で判断（高頻度×低重要度→最優先で仕組み化）</text>
+
+  <rect x="640" y="400" width="500" height="110" class="box"/>
+  <text x="670" y="435" class="h">[5] 深い集中の枠を確保</text>
+  <text x="670" y="462" class="t">まず1日20分（10分でも可）をAに固定 / 通知はまとめる</text>
+
+  <rect x="640" y="540" width="500" height="90" class="box"/>
+  <text x="670" y="575" class="h">[6] 週1レビュー→設計図更新</text>
+  <text x="670" y="602" class="t">効いた作業 / 薄い作業 / 次にやめる・任せる・仕組み化 を決める</text>
+
+  <!-- Arrows column 1 -->
+  <path class="arrow" d="M320 230 L320 260"/>
+  <path class="arrow" d="M320 350 L320 380"/>
+
+  <!-- Cross arrow to column 2 -->
+  <path class="arrow" d="M580 185 L640 185"/>
+  <path class="arrow" d="M580 305 L640 305"/>
+  <path class="arrow" d="M580 455 L640 185"/>
+
+  <!-- Arrows column 2 -->
+  <path class="arrow" d="M890 230 L890 260"/>
+  <path class="arrow" d="M890 370 L890 400"/>
+  <path class="arrow" d="M890 510 L890 540"/>
+
+  <!-- Footer note -->
+  <text x="60" y="650" class="sub muted">ポイント：増やすより「成果に効く配分」に戻す。集中は意志ではなく“枠”で作る。</text>
+</svg>

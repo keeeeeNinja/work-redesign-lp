@@ -1,0 +1,64 @@
+/* Modern CSS Reset */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body defaults */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove list styles */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Remove default button styles */
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
