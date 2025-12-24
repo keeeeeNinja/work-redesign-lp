@@ -217,6 +217,143 @@ Three main personas:
 - Over-praise or validate excessively
 - Add new CTAs or sales pressure
 
+## UI/UX Design Tools
+
+### ui-ux-pro-max Skill
+
+This project has access to the **ui-ux-pro-max** skill - a searchable database of UI/UX design intelligence. Use this skill when making design decisions to ensure choices are informed by established patterns and best practices.
+
+**What's included:**
+- 50 UI styles (glassmorphism, minimalism, brutalism, etc.)
+- 21 color palettes (organized by industry/product type)
+- 50 font pairings (Google Fonts ready)
+- 20 chart types (for dashboards/analytics)
+- 8 stack-specific guidelines (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, HTML+Tailwind)
+- Product type recommendations (SaaS, e-commerce, portfolio, etc.)
+- Landing page structures and CTA strategies
+- UX best practices and anti-patterns
+
+**Location:** `.claude/skills/ui-ux-pro-max/`
+
+#### When to Use This Skill
+
+Use the ui-ux-pro-max skill when:
+- Making color palette decisions
+- Selecting font pairings or typography systems
+- Choosing UI styles for new sections
+- Designing new components (buttons, cards, forms, etc.)
+- Reviewing existing UI for quality improvements
+- Planning page structure or layout changes
+- Ensuring accessibility and UX best practices
+
+**Note:** This skill complements (does not replace) the existing design philosophy. Use it to **validate and refine** decisions made using Refactoring UI and Every Layout principles.
+
+#### Basic Usage
+
+Search the knowledge base using Python:
+
+```bash
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain>
+```
+
+**Available search domains:**
+- `product` - Product type recommendations (SaaS, e-commerce, portfolio, etc.)
+- `style` - UI style details (colors, effects, frameworks)
+- `typography` - Font pairings with Google Fonts imports
+- `color` - Color palettes by product/industry type
+- `landing` - Page structure and CTA strategies
+- `chart` - Chart types and library recommendations
+- `ux` - Best practices and anti-patterns
+- `prompt` - AI prompts and CSS keywords for specific styles
+
+**Stack-specific guidelines:**
+```bash
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
+```
+
+Available stacks: `html-tailwind` (default), `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`
+
+#### Recommended Search Workflow
+
+When working on design tasks, follow this search order:
+
+1. **Product context** - Understand industry standards
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "consulting service professional" --domain product
+   ```
+
+2. **Style direction** - Get detailed style guidelines
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "minimalism professional" --domain style
+   ```
+
+3. **Typography** - Find appropriate font pairings
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "professional trustworthy" --domain typography
+   ```
+
+4. **Color palette** - Get industry-appropriate colors
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "consulting service" --domain color
+   ```
+
+5. **UX validation** - Check best practices
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "animation" --domain ux
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "accessibility" --domain ux
+   ```
+
+6. **Stack guidelines** - Implementation-specific advice (if needed)
+   ```bash
+   python3 .claude/skills/ui-ux-pro-max/scripts/search.py "responsive layout" --stack html-tailwind
+   ```
+
+#### Integration with Existing Design Philosophy
+
+**Relationship to current principles:**
+
+| Current Principle | ui-ux-pro-max Role |
+|-------------------|-------------------|
+| **Refactoring UI** | Validates color choices, spacing systems, visual hierarchy |
+| **Every Layout** | Provides component patterns that work with intrinsic design |
+| **UX Philosophy** | Supplements with research-backed UX patterns and anti-patterns |
+
+**Decision hierarchy:**
+1. **Project constraints first** - Respect existing CSS variables, spacing scale, color palette
+2. **Search ui-ux-pro-max** - Get industry context and pattern recommendations
+3. **Apply principles** - Implement using Refactoring UI + Every Layout guidelines
+4. **Validate** - Check against UX best practices in the skill database
+
+#### Example: Adding a New Section
+
+If asked to add a testimonial section:
+
+```bash
+# 1. Search landing page patterns
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "testimonial social-proof" --domain landing
+
+# 2. Search UX best practices
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "testimonial" --domain ux
+
+# 3. Search relevant styles (if considering a specific style)
+python3 .claude/skills/ui-ux-pro-max/scripts/search.py "card layout" --domain style
+
+# 4. Implement using existing CSS architecture
+# - Use --space-* variables for spacing
+# - Use existing color palette (--ink, --accent, etc.)
+# - Follow card component patterns (.value-card as reference)
+# - Ensure accessibility (alt text, contrast ratios)
+```
+
+#### Quality Checkpoints
+
+Before implementing design decisions, verify:
+- [ ] Searched relevant domains (product, style, ux minimum)
+- [ ] Recommendations align with existing design philosophy
+- [ ] New choices use existing CSS custom properties (no new colors/spacing values)
+- [ ] UX anti-patterns have been checked and avoided
+- [ ] Implementation respects intrinsic design principles (no magic numbers)
+
 ## Development Commands
 
 This is a static HTML project with no build process.

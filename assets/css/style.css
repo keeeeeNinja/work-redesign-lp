@@ -990,12 +990,12 @@ h1 {
 }
 
 .footer p {
-    font-size: 1.125rem;
+    font-size: 1.35rem;  /* 1.125rem から 1.35rem に拡大（約22px） */
     line-height: 1.7;
     color: var(--text-muted-dark);
-    max-width: 720px;
+    max-width: 1200px;  /* 720px から 1200px に拡大（1行に収める） */
     margin: 0 auto;
-    font-weight: 300;
+    font-weight: 400;  /* 300 から 400 に変更（読みやすさ向上） */
 }
 
 /* セクション別の背景設定 */
@@ -1237,5 +1237,134 @@ body.reduced-motion .reveal {
 
     .summary .section-lead {
         white-space: normal;
+    }
+}
+
+/* ========================================
+   UI改善: 視覚階層・CTA導線・認知負荷削減
+   ======================================== */
+
+/* P0-1: CTA Inline セクション（Flow/Cases/Stuck直後） */
+.cta-inline {
+    padding: var(--space-6) 0;
+    text-align: center;
+}
+
+.cta-inline .container {
+    display: flex;
+    justify-content: center;
+}
+
+.cta-inline .button {
+    margin: 0 auto;
+}
+
+/* P0-3: Flow セクションの視覚強調 */
+.flow-card {
+    padding: var(--space-8);  /* --space-6 から --space-8 に拡大 */
+}
+
+.flow-card .step {
+    width: 60px;     /* 52px から 60px に拡大（1.15倍） */
+    height: 60px;
+    font-size: 1.05rem;  /* 0.95rem から 1.05rem に拡大 */
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);  /* 影を追加 */
+}
+
+/* P1-2: Cases セクションの視覚強調 */
+.case-card {
+    box-shadow: 0 6px 16px rgba(10, 22, 40, 0.12);  /* 0.08 から 0.12 に強化 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-6px);  /* -4px から -6px に変更 */
+    box-shadow: 0 12px 28px rgba(10, 22, 40, 0.18);
+}
+
+.case-after {
+    background: rgba(248, 249, 250, 0.6);  /* var(--off-white) の60%透過 */
+    padding: var(--space-4);
+    border-radius: var(--radius-1);
+    margin-top: var(--space-3);
+}
+
+.case-after p {
+    font-weight: 500;  /* 結果を強調 */
+}
+
+/* P1-1: Summary セクションの1カラム化 */
+.summary-subtitle {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+    color: var(--text-on-light);
+    font-family: var(--font-serif);
+}
+
+.summary-emphasis {
+    font-size: 1.15rem;  /* 通常の1.15倍 */
+    font-weight: 500;
+    line-height: 1.7;
+    margin: var(--space-4) 0;
+    padding: var(--space-4) var(--space-6);
+    background: rgba(212, 175, 55, 0.08);
+    border-left: 4px solid var(--gold);
+    border-radius: var(--radius-1);
+}
+
+/* Supporting セクションの余白削減 */
+.summary,
+.stuck {
+    padding: var(--space-16) 0;  /* --space-20 から --space-16 に削減（20%削減） */
+}
+
+.summary .section-title,
+.stuck .section-title {
+    font-size: clamp(2rem, 2.7vw, 2.25rem);  /* 0.9倍に縮小 */
+}
+
+/* P2-2: FAQ スタイル（Consultation内） */
+.consultation .faq-list {
+    display: grid;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.consultation .faq-item {
+    padding: var(--space-4);
+    background: rgba(255, 255, 255, 0.95);  /* 0.05 から 0.95 に変更（明るい背景） */
+    border-radius: var(--radius-1);
+}
+
+.consultation .faq-item h4 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+    color: var(--text-on-light);  /* var(--text-on-dark) から var(--text-on-light) に変更 */
+}
+
+.consultation .faq-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted-light);  /* var(--text-muted-dark) から var(--text-muted-light) に変更 */
+    margin: 0;
+}
+
+/* Fit セクション: 「向いている人」を視覚的に強調 */
+.fit-card:first-child {
+    box-shadow: 0 8px 20px rgba(10, 22, 40, 0.14);  /* 影を1.5倍に強化 */
+    border: 2px solid rgba(212, 175, 55, 0.15);
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 820px) {
+    .flow-card {
+        padding: var(--space-6);  /* モバイルでは元のサイズに戻す */
+    }
+
+    .summary,
+    .stuck {
+        padding: var(--space-12) 0;
     }
 }
