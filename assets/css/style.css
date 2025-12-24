@@ -448,16 +448,6 @@ h1 {
     letter-spacing: -0.02em;
 }
 
-@media (max-width: 820px) {
-    .section-title {
-        text-align: center;
-    }
-
-    .section-title .mobile-break {
-        display: block;
-    }
-}
-
 .section-lead {
     font-size: 1.125rem;
     line-height: 1.7;
@@ -577,34 +567,6 @@ h1 {
     gap: var(--space-3);
 }
 
-@media (max-width: 820px) {
-    .checklist {
-        padding: 0 4px;
-    }
-}
-
-.checklist li {
-    padding-left: 40px;
-    position: relative;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    font-weight: 300;
-}
-
-@media (max-width: 820px) {
-    .checklist li {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .checklist li::before {
-        position: relative;
-        left: auto;
-        display: inline-block;
-        margin-right: 8px;
-    }
-}
-
 .checklist li::before {
     content: "—";
     position: absolute;
@@ -648,14 +610,6 @@ h1 {
         0 32px 80px rgba(10, 22, 40, 0.08);
     border-radius: var(--radius-2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media (max-width: 820px) {
-    .value-card,
-    .case-card,
-    .fit-card {
-        padding: var(--space-4);
-    }
 }
 
 .value-card:hover,
@@ -1050,10 +1004,12 @@ h1 {
     white-space: nowrap;  /* 1行表示 */
 }
 
-@media (max-width: 820px) {
-    .summary .section-lead {
-        white-space: normal;
-    }
+.checklist li {
+    padding-left: 40px;
+    position: relative;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 300;
 }
 
 .summary .split {
@@ -1119,6 +1075,10 @@ h1 {
 
 .fit {
     background: var(--off-white);
+}
+
+.mobile-break-inline {
+    display: none;
 }
 
 .faq {
@@ -1274,12 +1234,6 @@ body.reduced-motion .reveal {
     white-space: nowrap;
 }
 
-@media (max-width: 820px) {
-    .hero .lead:last-of-type {
-        white-space: normal;
-    }
-}
-
  
 
 /* ========================================
@@ -1304,12 +1258,6 @@ body.reduced-motion .reveal {
 /* P0-3: Flow セクションの視覚強調 */
 .flow-card {
     padding: var(--space-8);  /* --space-6 から --space-8 に拡大 */
-}
-
-@media (max-width: 820px) {
-    .flow-card {
-        padding: var(--space-5);
-    }
 }
 
 .flow-card .step {
@@ -1361,23 +1309,10 @@ body.reduced-motion .reveal {
     border-radius: var(--radius-1);
 }
 
-@media (max-width: 820px) {
-    .summary-emphasis {
-        padding: var(--space-3) var(--space-4);
-    }
-}
-
 /* Supporting セクションの余白削減 */
 .summary,
 .stuck {
     padding: var(--space-16) 0;  /* --space-20 から --space-16 に削減（20%削減） */
-}
-
-@media (max-width: 820px) {
-    .summary,
-    .stuck {
-        padding: var(--space-12) 0;
-    }
 }
 
 .summary .section-title,
@@ -1465,14 +1400,6 @@ body.reduced-motion .reveal {
     transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-@media (max-width: 820px) {
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-        font-size: 16px; /* iOSのズーム防止 */
-    }
-}
-
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
@@ -1538,3 +1465,105 @@ body.reduced-motion .reveal {
 }
 
 /* フォームのレスポンシブ対応 */
+
+
+/* ========================================
+   レスポンシブ対応 (max-width: 820px)
+   ======================================== */
+@media (max-width: 820px) {
+    .section-title {
+        text-align: center;
+    }
+
+    .section-title .mobile-break {
+        display: block;
+    }
+    .checklist {
+        padding: 32px 40px;
+        gap: 16px;
+    }
+    .checklist li {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .stuck .checklist {
+        padding-left: 0;
+    }
+
+    .stuck .checklist li {
+        justify-content: flex-start;
+        padding-left: 24px;
+    }
+
+    .consultation .checklist li {
+        justify-content: flex-start;
+    }
+
+    .checklist li::before {
+        position: static;
+        display: block;
+        margin-right: 4px;
+        flex-shrink: 0;
+    }
+    .value-card,
+    .case-card,
+    .fit-card {
+        padding: var(--space-4);
+    }
+    .summary .section-lead {
+        white-space: normal;
+    }
+    .hero .lead:last-of-type {
+        white-space: normal;
+    }
+    .flow-card {
+        padding: var(--space-5);
+    }
+    .summary-emphasis {
+        padding: var(--space-3) var(--space-4);
+    }
+    .summary,
+    .stuck {
+        padding: var(--space-12) 0;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 16px; /* iOSのズーム防止 */
+    }
+    .stuck .split > div:first-child .eyebrow {
+        padding-left: 24px;
+    }
+
+    .stuck .stuck-card {
+        padding: var(--space-4);
+    }
+
+    .fit-separator {
+        display: none;
+    }
+
+    .mobile-break-inline {
+        display: block;
+    }
+
+    .fit {
+        padding-bottom: 40px;
+    }
+
+    .consultation {
+        padding-top: 40px;
+    }
+
+    .consultation-card {
+        border-top: 0;
+    }
+
+    .consultation {
+        border-top: 0;
+    }
+}
