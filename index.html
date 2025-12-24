@@ -63,7 +63,7 @@
 
       <section class="summary">
         <div class="container">
-          <h2 class="section-title reveal nowrap-title">成果が出ない原因は「努力不足」ではない</h2>
+          <h2 class="section-title reveal nowrap-title">成果が出ない原因は<span class="mobile-break">「努力不足」ではない</span></h2>
           <p class="section-lead reveal" style="--delay: 0.05s;">
             まずは現象を観察し、次に「どの判断が詰まっているか」を構造化します。
           </p>
@@ -90,7 +90,7 @@
 
       <section class="flow">
         <div class="container">
-          <h2 class="section-title reveal">仕事の再設計は、実はシンプル</h2>
+          <h2 class="section-title reveal"><span class="mobile-break">仕事の再設計は、</span>実はシンプル</h2>
           <p class="section-lead reveal" style="--delay: 0.1s;">
             抽象的に聞こえる「再設計」を、具体的な手順に落とします。
           </p>
@@ -127,7 +127,7 @@
 
       <section class="stuck">
         <div class="container">
-          <h2 class="section-title reveal">多くの人が、ここで立ち止まります</h2>
+          <h2 class="section-title reveal"><span class="mobile-break">多くの人が、</span>ここで立ち止まります</h2>
           <div class="split">
             <div class="reveal" style="--delay: 0.1s;">
               <p class="eyebrow">起きている現象</p>
@@ -287,15 +287,52 @@
                   <p>頑張っているのに成果が出ないと感じている人、仕事を構造で見直したい人です。</p>
                 </article>
               </div>
-              <div class="form-embed" style="margin-top: var(--space-6);">
-                <p>GoogleフォームのURLが決まり次第、ここに埋め込みます。</p>
-                <p class="form-note">送信後の完了はフォーム内で表示されます。</p>
-              </div>
-              <!-- TODO: GoogleフォームURLが決まり次第、差し替え -->
-              <a class="button ghost" href="https://docs.google.com/forms/d/e/FORM_ID/viewform" target="_blank" rel="noreferrer">
-                無料相談フォームを開く
-              </a>
-              <p class="cta-sub">無理な勧誘はしません。必要な人だけ次の提案をします。</p>
+
+              <form id="consultation-form">
+                <div class="form-group">
+                  <label for="name">お名前 <span class="required">必須</span></label>
+                  <input type="text" id="name" name="name" required placeholder="山田 太郎">
+                </div>
+
+                <div class="form-group">
+                  <label for="email">メールアドレス <span class="required">必須</span></label>
+                  <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                  <label for="job">現在の職種・役職</label>
+                  <input type="text" id="job" name="job" placeholder="例: 事務、営業、企画、管理職">
+                </div>
+
+                <div class="form-group">
+                  <label for="content">相談したい内容 <span class="required">必須</span></label>
+                  <textarea id="content" name="content" required placeholder="今抱えている課題や相談したい内容を自由に記入してください"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="datetime">希望する相談日時（第1〜3希望） <span class="required">必須</span></label>
+                  <textarea id="datetime" name="datetime" rows="3" required placeholder="例:&#10;12/25 14:00&#10;12/26 10:00&#10;12/27 15:00"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="source">このページを知ったきっかけ</label>
+                  <select id="source" name="source">
+                    <option value="">選択してください</option>
+                    <option value="記事からの流入">記事からの流入</option>
+                    <option value="検索">検索</option>
+                    <option value="SNS">SNS</option>
+                    <option value="その他">その他</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="button primary" id="submit-btn">
+                  無料相談を申し込む
+                </button>
+
+                <div id="form-message" class="form-message"></div>
+              </form>
+
+              <p class="cta-sub" style="margin-top: var(--space-4);">無理な勧誘はしません。必要な人だけ次の提案をします。</p>
             </div>
           </div>
         </div>
@@ -315,5 +352,6 @@
       </div>
     </div>
     <script src="assets/js/motion.js" defer></script>
+    <script src="assets/js/form.js" defer></script>
   </body>
 </html>
