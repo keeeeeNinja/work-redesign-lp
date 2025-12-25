@@ -1,0 +1,15 @@
+# ドキュメント・設計資料
+*.md
+LP設計案/
+デザイン思想/
+*.gsheet
+
+# 開発用ファイル
+.claude/
+01uiproレビュー専用プロンプト.md
+02uipro｜改善設計図作成プロンプト.md
+03uipro｜UI調整指示書プロンプト.md
+
+# 不要な画像
+assets/img/リファレンスサイト.png
+assets/img/screencapture-*.png

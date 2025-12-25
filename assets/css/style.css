@@ -1267,6 +1267,12 @@ body.reduced-motion .reveal {
     border: 2px solid rgba(212, 175, 55, 0.15);
 }
 
+/* Fit セクション: 「向いていない人」にも同じボーダーを適用 */
+.fit-card:last-child {
+    box-shadow: 0 8px 20px rgba(10, 22, 40, 0.14);  /* 影を1.5倍に強化 */
+    border: 2px solid rgba(212, 175, 55, 0.15);
+}
+
 /* レスポンシブ調整 */
 
 /* ========================================
