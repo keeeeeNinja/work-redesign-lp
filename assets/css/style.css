@@ -106,7 +106,7 @@ section {
 .stack-card {
     position: absolute;
     width: 100%;
-    max-width: min(640px, 90vw);
+    max-width: min(960px, 90vw);
     aspect-ratio: 640 / 380;
     border-radius: var(--radius-2);
     background: linear-gradient(140deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
@@ -129,13 +129,13 @@ section {
 
 .hero-visual-card {
     background: rgba(255, 255, 255, 0.08);  /* 背景を少し強化 */
-    padding: var(--space-6);
+    padding: var(--space-4);
     border-radius: var(--radius-2);
     box-shadow: 0 30px 70px rgba(10, 22, 40, 0.2);  /* 境界線削除、影を強化 */
     display: grid;
     place-items: center;
     width: 100%;
-    max-width: min(640px, 90vw);
+    max-width: min(960px, 90vw);
     aspect-ratio: 640 / 380;
     --base-transform: rotateX(2deg) rotateY(-2deg);
     transform: var(--base-transform) translate3d(var(--tx), var(--ty), 0) rotateX(var(--rx)) rotateY(var(--ry));
@@ -1171,7 +1171,7 @@ body.reduced-motion .reveal {
 
 /* P0-3: Flow セクションの視覚強調 */
 .flow-card {
-    padding: var(--space-8);  /* --space-6 から --space-8 に拡大 */
+    padding: var(--space-6);  /* --space-6 から --space-8 に拡大 */
 }
 
 .flow-card .step {
@@ -1392,6 +1392,11 @@ body.reduced-motion .reveal {
 @media (max-width: 820px) {
     .sp-break {
         display: block;
+    }
+
+    /* モーダルのパディングをSP版で調整 */
+    .modal-content {
+        padding: var(--space-4);
     }
 
     /* h1の幅を制限してグリッドのはみ出しを防止 */
