@@ -453,7 +453,7 @@ h1 {
 .section-lead {
     font-size: 1.125rem;
     line-height: 1.7;
-    max-width: 800px;
+    max-width: 880px;
     margin-bottom: var(--space-6);
     font-weight: 300;
     opacity: 0.88;
@@ -1040,7 +1040,6 @@ h1 {
     font-weight: 400;  /* 300 → 400 やや太く */
     line-height: 1.75;
     opacity: 0.9;  /* 0.88 → 0.9 コントラストを強化 */
-    white-space: nowrap;  /* 1行表示 */
 }
 
 .checklist li {
@@ -1676,17 +1675,14 @@ body.reduced-motion .reveal {
 
     .consultation-card {
         border-top: 0;
-    }
-
-    .consultation-card {
         gap: var(--space-16);
     }
-
 }
 
 @media (min-width: 768px) {
     .hero-grid {
         grid-template-columns: 1.1fr 0.9fr;
+        gap: var(--space-8);
     }
 
     .cta-row {
@@ -1699,9 +1695,37 @@ body.reduced-motion .reveal {
         align-items: center;
     }
 
-    .value-grid,
-    .case-grid {
+    .value {
+        padding-bottom: 80px;
+    }
+
+    .value-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-3);
+    }
+
+    .case-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .summary {
+        padding-bottom: 48px;
+    }
+
+    .key-points {
+        gap: 0;
+    }
+
+    .split {
+        gap: 0;
+    }
+
+    .case-card {
+        padding: var(--space-3);
     }
 
     .fit-grid {
@@ -1710,7 +1734,7 @@ body.reduced-motion .reveal {
 
     .flow-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-4);
+        gap: var(--space-3);
     }
 
     .feature-row {
@@ -1734,14 +1758,45 @@ body.reduced-motion .reveal {
     }
 
     .consultation-card {
-        grid-template-columns: 1.2fr 0.8fr;
         align-items: start;
+    }
+
+    .consultation-form .button {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #consultation-form + .cta-sub {
+        text-align: center;
+    }
+
+    .fit {
+        padding-bottom: 48px;
+    }
+
+    .consultation {
+        border-top: 0;
+        padding: 0 0 40px 0;
+    }
+
+    .has-motion .reveal.is-visible {
+        border: 0;
+    }
+
+    .consultation .faq-list {
+        margin-bottom: var(--space-10);
+    }
+
+    .checklist {
+        margin: var(--space-4) 0;
     }
 }
 
 @media (min-width: 1100px) {
     .hero-grid {
         grid-template-columns: 1.4fr 0.6fr;
+        gap: var(--space-16);
     }
 
     .hero-visual img {
