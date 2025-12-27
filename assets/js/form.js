@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!form) return;
 
   const submitBtn = document.getElementById('submit-btn');
-  const formMessage = document.getElementById('form-message');
+  let formMessage = document.getElementById('form-message');
+  if (!formMessage) {
+    formMessage = document.createElement('div');
+    formMessage.id = 'form-message';
+    formMessage.className = 'form-message';
+    document.body.appendChild(formMessage);
+  }
 
   // GASのウェブアプリURL（デプロイ後にここに貼り付け）
   const GAS_URL = 'https://script.google.com/macros/s/AKfycbzsFBgCkJn8bIBkNp3udSCXvyyoLSENZYtM58qnq4P6qknesTHTStiULXi9o17qWLgN/exec';
@@ -29,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.textContent = '送信中...';
     formMessage.textContent = '';
     formMessage.className = 'form-message';
-    formMessage.style.opacity = '1';
+    formMessage.style.opacity = '0';
     formMessage.style.display = 'none';
+    formMessage.style.transform = 'translateX(-50%) translateY(-20px)';
 
     // フォームデータを取得
     const formData = {
@@ -88,38 +95,50 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /**
-   * 成功メッセージを表示
+   * 成功メッセージを表示（トースト）
    */
   function showSuccessMessage() {
     formMessage.className = 'form-message success';
     formMessage.textContent = 'お申し込みありがとうございます。2営業日以内にメールでご連絡いたします。';
     formMessage.style.display = 'block';
-    formMessage.style.opacity = '1';
+
+    // アニメーションのためにブラウザの再描画を待つ
+    requestAnimationFrame(() => {
+      formMessage.style.opacity = '1';
+      formMessage.style.transform = 'translateX(-50%) translateY(0)';
+    });
 
     // メッセージを5秒後にフェードアウト
     setTimeout(() => {
       formMessage.style.opacity = '0';
+      formMessage.style.transform = 'translateX(-50%) translateY(-20px)';
       setTimeout(() => {
         formMessage.textContent = '';
         formMessage.className = 'form-message';
         formMessage.style.display = 'none';
-        formMessage.style.opacity = '1';
       }, 300);
-    }, 5000);
+    }, 2000);
   }
 
   /**
-   * エラーメッセージを表示
+   * エラーメッセージを表示（トースト）
    */
   function showErrorMessage(message) {
     formMessage.className = 'form-message error';
     formMessage.style.display = 'block';
-    formMessage.style.opacity = '1';
 
     if (message === 'GAS URLが設定されていません') {
       formMessage.textContent = 'フォームの設定が完了していません。しばらくお待ちください。';
     } else {
       formMessage.textContent = '送信に失敗しました。もう一度お試しいただくか、メールでお問い合わせください。';
     }
+
+    // アニメーションのためにブラウザの再描画を待つ
+    requestAnimationFrame(() => {
+      formMessage.style.opacity = '1';
+      formMessage.style.transform = 'translateX(-50%) translateY(0)';
+    });
+
+    // エラーメッセージは自動的に消えない（ユーザーが確認できるように）
   }
 });

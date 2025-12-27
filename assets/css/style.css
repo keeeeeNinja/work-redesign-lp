@@ -1454,25 +1454,54 @@ body.reduced-motion .reveal {
     cursor: not-allowed;
 }
 
+/* トースト通知 */
 .form-message {
-    margin-top: var(--space-4);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 90%;
     padding: var(--space-4);
     border-radius: var(--radius-1);
     font-size: 0.95rem;
     text-align: center;
-    transition: opacity 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 20px));
 }
 
 .form-message.success {
-    background: #ecfdf5;
-    color: #065f46;
-    border: 1px solid #10b981;
+    background: #10b981;
+    color: #ffffff;
+    border: 1px solid #059669;
 }
 
 .form-message.error {
-    background: rgba(239, 68, 68, 0.2);
-    color: #fca5a5;
-    border: 1px solid rgba(239, 68, 68, 0.4);
+    background: #ef4444;
+    color: #ffffff;
+    border: 1px solid #dc2626;
+}
+
+/* トースト表示時のアニメーション */
+.form-message[style*="display: block"] {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* アニメーション無効化 */
+@media (prefers-reduced-motion: reduce) {
+    .form-message {
+        transition: none;
+        transform: translate(-50%, -50%);
+    }
+    .form-message[style*="display: block"] {
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* フォームのレスポンシブ対応 */
