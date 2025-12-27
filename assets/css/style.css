@@ -1532,6 +1532,11 @@ body.reduced-motion .reveal {
         display: block;
     }
 
+    /* cta-subテキストを中央寄せ */
+    .cta-sub {
+        text-align: center;
+    }
+
     /* モーダルのパディングをSP版で調整 */
     .modal-content {
         padding: var(--space-4);
