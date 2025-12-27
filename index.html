@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
       rel="stylesheet"
     >
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
     <header class="hero">
@@ -163,6 +164,7 @@
           <h2 class="section-title reveal"><span class="mobile-break">再設計で</span>変わった実例</h2>
           <div class="case-grid">
             <article class="case-card reveal" style="--delay: 0.05s;">
+              <i data-lucide="file-text" class="case-icon"></i>
               <h3 class="case-title">事例A</h3>
               <p class="case-subtitle">32歳・事務</p>
 
@@ -182,6 +184,7 @@
               </div>
             </article>
             <article class="case-card reveal" style="--delay: 0.1s;">
+              <i data-lucide="file-text" class="case-icon"></i>
               <h3 class="case-title">事例B</h3>
               <p class="case-subtitle">39歳・法人営業</p>
 
@@ -201,6 +204,7 @@
               </div>
             </article>
             <article class="case-card reveal" style="--delay: 0.15s;">
+              <i data-lucide="file-text" class="case-icon"></i>
               <h3 class="case-title">事例C</h3>
               <p class="case-subtitle">45歳・企画/調整</p>
 
@@ -304,7 +308,7 @@
 
                 <div class="form-group">
                   <label for="job">現在の職種・役職</label>
-                  <input type="text" id="job" name="job" placeholder="例: 事務、営業、企画、管理職">
+                  <input type="text" id="job" name="job" placeholder="事務、営業、企画、管理職">
                 </div>
 
                 <div class="form-group">
@@ -356,5 +360,11 @@
     <div id="form-message" class="form-message"></div>
     <script src="assets/js/motion.js" defer></script>
     <script src="assets/js/form.js" defer></script>
+    <script>
+      // Lucide icons initialization
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
   </body>
 </html>

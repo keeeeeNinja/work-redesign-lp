@@ -626,6 +626,18 @@ h1 {
         0 32px 80px rgba(10, 22, 40, 0.08);
     border-radius: var(--radius-2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.case-icon {
+    position: absolute;
+    top: var(--space-6);
+    right: var(--space-6);
+    width: 32px;
+    height: 32px;
+    color: var(--gold);
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .value-card:hover,
@@ -643,6 +655,11 @@ h1 {
         0 40px 100px rgba(10, 22, 40, 0.12);
 }
 
+.case-card:hover .case-icon {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
 .value-icon {
     width: 48px;
     height: 48px;
@@ -656,7 +673,8 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .value-icon {
+    .value-icon,
+    .case-icon {
         transition: none;
     }
 }
@@ -1695,6 +1713,10 @@ body.reduced-motion .reveal {
         border-top: 0;
         gap: var(--space-16);
     }
+
+    .value {
+        padding-bottom: 80px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1821,6 +1843,18 @@ body.reduced-motion .reveal {
     .checklist {
         margin: var(--space-4) 0;
     }
+
+    .value-card {
+        padding: var(--space-4);
+    }
+
+    .flow-card {
+        padding: var(--space-4);
+    }
+
+    .fit-card.reveal {
+        padding: var(--space-4);
+    }
 }
 
 @media (min-width: 1280px) {
@@ -1847,7 +1881,7 @@ body.reduced-motion .reveal {
     }
 
     .value-card {
-        padding: var(--space-4);
+        padding: var(--space-2) var(--space-4) var(--space-4);
     }
 
     .case-grid {
